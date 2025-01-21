@@ -51,8 +51,8 @@ app.put("/books/:id",(req,res)=>{
 
 app.delete("/books/:id",(req,res)=>{
   const {id} = req.params
-  const r = books.findIndex((x)=>x.book_id == id)
-  books.splice(r)
+  const r = books.findIndex((x)=>x.book_id === id)
+  books.splice(r,1)
 })
 
 app.listen(PORT, () => {
